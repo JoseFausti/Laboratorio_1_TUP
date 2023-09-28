@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio20 {
+public class Ejercicio_20 {
     public static void main(String[] args) {
         int numero, posicion_mayor, cifra, mayor, posicion;
         Scanner sc = new Scanner(System.in);

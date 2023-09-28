@@ -1,8 +1,6 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
-public class Ejercicio11 {
+public class Ejercicio_11 {
 
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);

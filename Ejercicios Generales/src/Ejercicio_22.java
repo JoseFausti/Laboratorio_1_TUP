@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio22 {
+public class Ejercicio_22 {
 
     public static void main(String[] args) {
         int numero, i, auxiliar, contador, cifra;
