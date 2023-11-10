@@ -38,25 +38,37 @@ public class Clase_Telefono_Movil {
         }
     }
     public void EliminarTelefono(int numeroSerie) {
+        if (telefono_movil.isEmpty()){
+            JOptionPane.showMessageDialog(null,"No hay datos en la lista.");
+        }else{
         for (Clase_Telefono_Movil telefono : telefono_movil) {
             if (telefono.getNumero_serie() == numeroSerie) {
                 telefono_movil.remove(telefono);
                 break;  // Se detiene después de eliminar el primer teléfono con el número de serie dado
+               }
             }
         }
     }
     public void BuscarTelefono(String marca, String modelo, Integer numero_serie) {
+        if (telefono_movil.isEmpty()){
+            JOptionPane.showMessageDialog(null,"No hay elementos en la lista.");
+        }else{
         for (Clase_Telefono_Movil telefono : telefono_movil) {
             if ((telefono_movil.equals(marca) && telefono_movil.equals(modelo)) || telefono_movil.equals(numero_serie)) {
                 JOptionPane.showMessageDialog(null, "Búsqueda exitosa \n" +
                         "Telefono móvil: " + telefono);
+                }
             }
         }
     }
     public void MostrarTelefonos() {
-        JOptionPane.showMessageDialog(null,"Telefonos: ");
-        for (Clase_Telefono_Movil telefonos : telefono_movil){
-            JOptionPane.showMessageDialog(null,telefonos);
+        if (telefono_movil.isEmpty()){
+            JOptionPane.showMessageDialog(null,"No hay elementos en la lista.");
+        }else {
+            JOptionPane.showMessageDialog(null, "Telefonos: ");
+            for (Clase_Telefono_Movil telefonos : telefono_movil) {
+                JOptionPane.showMessageDialog(null, telefonos);
+            }
         }
     }
 }
