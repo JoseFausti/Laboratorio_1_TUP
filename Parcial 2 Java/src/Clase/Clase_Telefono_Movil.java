@@ -35,7 +35,6 @@ public class Clase_Telefono_Movil {
     public void AgregarTelefono(String marca, String modelo, Integer numero_serie) {
         if (!telefono_movil.contains(numero_serie)) {
             telefono_movil.add(new Clase_Telefono_Movil(marca, modelo, numero_serie));
-            ;
         }
     }
     public void EliminarTelefono(int numeroSerie) {
