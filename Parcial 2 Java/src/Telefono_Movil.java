@@ -12,13 +12,13 @@ public class Telefono_Movil {
         // Menú de Opciones
         while (true){
         JOptionPane.showMessageDialog(null,"Ingrese 1 para" +
-                "agregar un nuevo elemento a la lista.");
+                " agregar un nuevo elemento a la lista.");
         JOptionPane.showMessageDialog(null,"Ingrese 2 para" +
-                "eliminar un elemento de la lista.");
+                " eliminar un elemento de la lista.");
         JOptionPane.showMessageDialog(null,"Ingrese 3 para" +
-                "buscar un elemento por número o nombre.");
+                " buscar un elemento por número o nombre.");
         JOptionPane.showMessageDialog(null,"Ingrese 4 para" +
-                "listar todos los elemento en la lista.");
+                " listar todos los elemento en la lista.");
         opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opción: "));
         switch (opcion){
             case 1:
