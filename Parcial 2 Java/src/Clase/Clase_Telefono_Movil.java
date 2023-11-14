@@ -33,7 +33,16 @@ public class Clase_Telefono_Movil {
 
     // Método
     public void AgregarTelefono(String marca, String modelo, Integer numero_serie) {
-        if (!telefono_movil.contains(numero_serie)) {
+        boolean existeTelefono = false;
+
+        for (Clase_Telefono_Movil telefono : telefono_movil) {
+            if (telefono.getNumero_serie() == numero_serie) {
+                existeTelefono = true;
+                break;
+            }
+        }
+
+        if (!existeTelefono) {
             telefono_movil.add(new Clase_Telefono_Movil(marca, modelo, numero_serie));
         }
     }
