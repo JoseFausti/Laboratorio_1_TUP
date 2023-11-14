@@ -55,7 +55,7 @@ public class Clase_Telefono_Movil {
         }else{
         for (Clase_Telefono_Movil telefono : telefono_movil) {
            if ((telefono.getMarca().equals(marca) && telefono.getModelo().equals(modelo))
-            || telefono.getNumero_serie() == numero_serie) {
+             || telefono.getNumero_serie().equals(numero_serie)) {
                 JOptionPane.showMessageDialog(null, "Búsqueda exitosa \n" +
                         "Telefono móvil: " + telefono);
                 }
