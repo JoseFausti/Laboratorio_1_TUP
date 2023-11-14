@@ -11,59 +11,59 @@ public class Telefono_Movil {
         Clase_Telefono_Movil AgendaTelefonos = new Clase_Telefono_Movil();
         // Menú de Opciones
         while (true){
-        JOptionPane.showMessageDialog(null,"Ingrese 1 para" +
-                " agregar un nuevo elemento a la lista.");
-        JOptionPane.showMessageDialog(null,"Ingrese 2 para" +
-                " eliminar un elemento de la lista.");
-        JOptionPane.showMessageDialog(null,"Ingrese 3 para" +
-                " buscar un elemento por número o nombre.");
-        JOptionPane.showMessageDialog(null,"Ingrese 4 para" +
-                " listar todos los elemento en la lista.");
-        opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opción: "));
-        switch (opcion){
-            case 1:
-                marca = JOptionPane.showInputDialog("Ingrese la marca: ");
-                modelo = JOptionPane.showInputDialog("Ingrese el modelo: ");
-                numero_serie = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de serie: "));
-                AgendaTelefonos.AgregarTelefono(marca,modelo,numero_serie);
-                break;
-            case 2:
-                numero_serie = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de serie del modelo" +
-                        "para eliminarlo: "));
-                AgendaTelefonos.EliminarTelefono(numero_serie);
-                break;
-            case 3:
-                String opcionBusqueda = JOptionPane.showInputDialog(
-                        "Ingrese '1' para buscar por Marca y Modelo\n" +
-                        "Ingrese '2' para buscar por Número de Serie");
-            
-                switch (opcionBusqueda) {
-                    case "1":
-                        marca = JOptionPane.showInputDialog("Ingrese la marca: ");
-                        modelo = JOptionPane.showInputDialog("Ingrese el modelo: ");
-                        AgendaTelefonos.BuscarPorMarcaYModelo(marca, modelo);
-                        break;
-                    case "2":
-                        numero_serie = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de serie: "));
-                        AgendaTelefonos.BuscarPorNumeroSerie(numero_serie);
-                        break;
-                    default:
-                        JOptionPane.showMessageDialog(null, "Opción incorrecta para la búsqueda.");
-                        break;
+            JOptionPane.showMessageDialog(null,"Ingrese 1 para" +
+                    " agregar un nuevo elemento a la lista.");
+            JOptionPane.showMessageDialog(null,"Ingrese 2 para" +
+                    " eliminar un elemento de la lista.");
+            JOptionPane.showMessageDialog(null,"Ingrese 3 para" +
+                    " buscar un elemento por número o nombre.");
+            JOptionPane.showMessageDialog(null,"Ingrese 4 para" +
+                    " listar todos los elemento en la lista.");
+            opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opción: "));
+            switch (opcion){
+                case 1:
+                    marca = JOptionPane.showInputDialog("Ingrese la marca: ");
+                    modelo = JOptionPane.showInputDialog("Ingrese el modelo: ");
+                    numero_serie = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de serie: "));
+                    AgendaTelefonos.AgregarTelefono(marca,modelo,numero_serie);
+                    break;
+                case 2:
+                    numero_serie = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de serie del modelo" +
+                            "para eliminarlo: "));
+                    AgendaTelefonos.EliminarTelefono(numero_serie);
+                    break;
+                case 3:
+                    String opcionBusqueda = JOptionPane.showInputDialog(
+                            "Ingrese '1' para buscar por Marca y Modelo\n" +
+                            "Ingrese '2' para buscar por Número de Serie");
+                    // Opción de Búsqueda
+                    switch (opcionBusqueda) {
+                        case "1":
+                            marca = JOptionPane.showInputDialog("Ingrese la marca: ");
+                            modelo = JOptionPane.showInputDialog("Ingrese el modelo: ");
+                            AgendaTelefonos.BuscarPorMarcaYModelo(marca, modelo);
+                            break;
+                        case "2":
+                            numero_serie = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de serie: "));
+                            AgendaTelefonos.BuscarPorNumeroSerie(numero_serie);
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "Opción incorrecta para la búsqueda.");
+                            break;
+                        }
+                    break;
+                case 4:
+                    AgendaTelefonos.MostrarTelefonos();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opción incorrecta.");
                 }
+            // Mensaje de salida
+            salir = JOptionPane.showInputDialog("Ingrese 'Salir' para salir; Ingrese cualquier " +
+                    "tecla para continuar asignando personas: ");
+            if (salir.equalsIgnoreCase("Salir")) {
+                JOptionPane.showMessageDialog(null, "¡Gracias por usar la aplicación de gestión de teléfonos móviles! Hasta luego.");
                 break;
-            case 4:
-                AgendaTelefonos.MostrarTelefonos();
-                break;
-            default:
-                JOptionPane.showMessageDialog(null, "Opción incorrecta.");
-            }
-        // Mensaje de salida
-        salir = JOptionPane.showInputDialog("Ingrese 'Salir' para salir; Ingrese cualquier " +
-                "tecla para continuar asignando personas: ");
-        if (salir.equalsIgnoreCase("Salir")) {
-            JOptionPane.showMessageDialog(null, "¡Gracias por usar la aplicación de gestión de teléfonos móviles! Hasta luego.");
-            break;
             }
         }
     }
