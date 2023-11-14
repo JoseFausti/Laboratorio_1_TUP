@@ -33,10 +33,24 @@ public class Telefono_Movil {
                 AgendaTelefonos.EliminarTelefono(numero_serie);
                 break;
             case 3:
-                marca = JOptionPane.showInputDialog("Ingrese la marca: ");
-                modelo = JOptionPane.showInputDialog("Ingrese el modelo: ");
-                numero_serie = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de serie: "));
-                AgendaTelefonos.BuscarTelefono(marca,modelo,numero_serie);
+                String opcionBusqueda = JOptionPane.showInputDialog(
+                        "Ingrese '1' para buscar por Marca y Modelo\n" +
+                        "Ingrese '2' para buscar por Número de Serie");
+            
+                switch (opcionBusqueda) {
+                    case "1":
+                        marca = JOptionPane.showInputDialog("Ingrese la marca: ");
+                        modelo = JOptionPane.showInputDialog("Ingrese el modelo: ");
+                        AgendaTelefonos.BuscarPorMarcaYModelo(marca, modelo);
+                        break;
+                    case "2":
+                        numero_serie = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de serie: "));
+                        AgendaTelefonos.BuscarPorNumeroSerie(numero_serie);
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Opción incorrecta para la búsqueda.");
+                        break;
+                }
                 break;
             case 4:
                 AgendaTelefonos.MostrarTelefonos();
