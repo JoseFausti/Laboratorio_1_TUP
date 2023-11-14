@@ -58,17 +58,32 @@ public class Clase_Telefono_Movil {
             }
         }
     }
-    public void BuscarTelefono(String marca, String modelo, Integer numero_serie) {
+    public void BuscarPorMarcaYModelo(String marca, String modelo) {
         if (telefono_movil.isEmpty()){
-            JOptionPane.showMessageDialog(null,"No hay elementos en la lista.");
-        }else{
-        for (Clase_Telefono_Movil telefono : telefono_movil) {
-           if ((telefono.getMarca().equals(marca) && telefono.getModelo().equals(modelo))
-             || telefono.getNumero_serie().equals(numero_serie)) {
-                JOptionPane.showMessageDialog(null, "Búsqueda exitosa \n" +
-                        "Telefono móvil: " + telefono);
+            JOptionPane.showMessageDialog(null, "No hay elementos en la lista.");
+        } else {
+            for (Clase_Telefono_Movil telefono : telefono_movil) {
+                if (telefono.getMarca().equals(marca) && telefono.getModelo().equals(modelo)) {
+                    JOptionPane.showMessageDialog(null, "Búsqueda exitosa por Marca y Modelo \n" +
+                            "Telefono móvil: " + telefono);
+                    return;  // Detener la búsqueda después de encontrar el primer resultado
                 }
             }
+            JOptionPane.showMessageDialog(null, "No se encontraron resultados para la búsqueda por Marca y Modelo.");
+        }
+    }
+    public void BuscarPorNumeroSerie(Integer numero_serie) {
+        if (telefono_movil.isEmpty()){
+            JOptionPane.showMessageDialog(null, "No hay elementos en la lista.");
+        } else {
+            for (Clase_Telefono_Movil telefono : telefono_movil) {
+                if (telefono.getNumero_serie().equals(numero_serie)) {
+                    JOptionPane.showMessageDialog(null, "Búsqueda exitosa por Número de Serie \n" +
+                            "Telefono móvil: " + telefono);
+                    return;  // Detener la búsqueda después de encontrar el primer resultado
+                }
+            }
+            JOptionPane.showMessageDialog(null, "No se encontraron resultados para la búsqueda por Número de Serie.");
         }
     }
     public void MostrarTelefonos() {
