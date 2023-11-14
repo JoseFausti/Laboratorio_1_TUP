@@ -43,11 +43,14 @@ public class Telefono_Movil {
                 break;
             default:
                 JOptionPane.showMessageDialog(null, "Opción incorrecta.");
-        }
+            }
         // Mensaje de salida
         salir = JOptionPane.showInputDialog("Ingrese 'Salir' para salir; Ingrese cualquier " +
                 "tecla para continuar asignando personas: ");
-        if (salir.equalsIgnoreCase("Salir")) {break;}
+        if (salir.equalsIgnoreCase("Salir")) {
+            JOptionPane.showMessageDialog(null, "¡Gracias por usar la aplicación de gestión de teléfonos móviles! Hasta luego.");
+            break;
+            }
         }
     }
 }
